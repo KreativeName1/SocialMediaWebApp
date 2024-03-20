@@ -1,13 +1,11 @@
-// use jquery to add a click event to the img with id profile-img
 let inDialog = false;
 $(document).ready(function() {
   $('#profile-img').click(function() {
     inDialog = true;
     $('#profile-menu').remove();
     var div = $('<div id="profile-menu" class="menu"></div>');
-    // ajax call to get the user's data from php file
     $.ajax({
-      url: '../api/getLoggedUser.php',
+      url: '/get/getLoggedUser.php',
       type: 'GET',
       success: function(data) {
         var user = JSON.parse(data);

@@ -1,4 +1,3 @@
-
 CREATE TABLE `user` (
   `id` int(11) NOT NULL auto_increment primary key,
   `firstname` varchar(255) NOT NULL,

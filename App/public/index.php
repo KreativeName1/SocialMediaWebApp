@@ -38,7 +38,7 @@
           <a class="signin-btn" href="?View=signin">Sign in</a>
         </div>
       <?php endif; ?>
-      <img id="profile-img" class="profile-img" src="<?php echo $loggedUser != null ? "/uploads/profile/".$loggedUser->getImage() :'img/guest.png';?>" alt="profile" />
+      <img id="profile-img" class="profile-img" src="<?php echo $loggedUser != null ? "/uploads/profile/".$loggedUser->getImage() :'/public/img/guest.png';?>" alt="profile" />
     </div>
   </header>
   <main>
