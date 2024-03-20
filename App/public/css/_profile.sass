@@ -1,0 +1,44 @@
+.profile-header
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+  width: 100%
+  height: 500px
+  background-image: url("https://images.unsplash.com/photo-1678639578465-806d1373ce91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3OTI0NzE2NQ&ixlib=rb-4.0.3&q=80&w=1080")
+  background-size: cover
+  border-radius: 0 0 10px 10px
+  position: relative
+  @media (max-width: 768px)
+    height: 200px
+  div
+    position: absolute
+    top: 100%
+    left: 40rem
+    transform: translate(-50%, -50%)
+    display: flex
+    gap: 3rem
+    align-items: flex-end
+    @media (max-width: 992px)
+      left: 30rem
+    @media (max-width: 768px)
+      top: 100%
+      left: 25rem
+    h1
+      color: darken($accent, 10%)
+      font-size: 3.5rem
+      margin-bottom: 4rem
+      width: 30rem
+      @media (max-width: 768px)
+        font-size: 1.5rem
+        margin-bottom: 1rem
+    img
+      z-index: 5
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6)
+      border: 7px solid darken($background, 10%)
+      width: 20rem
+      height: 20rem
+      object-fit: cover
+      border-radius: 50%
+      @media (max-width: 768px)
+        width: 8rem
+        height: 8rem
+.bg-svg
+  fill: darken($background, 5%)

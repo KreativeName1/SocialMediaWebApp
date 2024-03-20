@@ -1,0 +1,99 @@
+$accent: #db25e8
+$background: white
+@import 'reset'
+@import 'header'
+@import 'footer'
+@import 'home'
+@import 'register'
+@import 'profile'
+main
+  max-width: 1200px
+  margin: 0 auto
+  background-color: darken($background, 5%)
+  height: calc(100vh - $header_height - $header_padding * 2)
+  position: relative
+  @media (max-width: 768px)
+    height: calc(100vh - $header_height_mobile - $header_padding_mobile * 2)
+.selected
+  color: $accent
+  font-weight: bold
+  text-decoration: underline
+  &:hover
+    color: $accent
+    text-decoration: underline
+
+
+.form
+  $width: 300px
+  $margin: 10px
+  $border: 1px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  h1
+    margin: 10px 0
+    font-size: 2rem
+    color: $accent
+  input
+    margin: $margin 0
+    padding: 10px
+    border-radius: 5px
+    border: $border solid #ccc
+    width: $width
+    &:focus
+      outline: none
+      border-color: $accent
+  input[disabled=""]
+    background-color: desaturate($accent, 50%) !important
+    cursor: not-allowed
+  input[type="submit"]
+    border: none
+    width: $width / 2
+    background-color: $accent
+    color: #fff
+    cursor: pointer
+    transition: all 0.3s ease
+    font-weight: bold
+    &:hover
+      background-color: darken($accent, 10%)
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+      transform: scale(1.1)
+    &:focus
+      outline: none
+      border-color: $accent
+  select
+    margin: $margin 0
+    padding: 10px
+    border-radius: 5px
+    border: $border solid #ccc
+    &:focus
+      outline: none
+      border-color: $accent
+  button
+    margin: 10px 0
+    padding: 10px
+    border-radius: 5px
+    border: none
+    width: 300px
+    background-color: $accent
+    color: #fff
+    cursor: pointer
+    &:hover
+      background-color: darken($accent, 10%)
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+      transform: scale(1.1)
+      text-decoration: none
+    &:focus
+      outline: none
+      border-color: $accent
+  .split
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 10px
+    width: $width + $margin * 2 + $border * 2
+    input
+      width: calc(50% - 5px)
+    select
+      width: calc(50% - 5px + $border * 2 + $margin * 2)
