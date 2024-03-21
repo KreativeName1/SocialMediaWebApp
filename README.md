@@ -6,7 +6,8 @@ Ein Testprojekt
 
 Das ist ein Testprojekt bei dem ich zum ersten Mal mit Docker, jquery und OOP+MVC in PHP arbeite. Es ist eine einfache Social Media Web App, bei dem Benutzer sich registrieren und einloggen können. Sie können auch Posts erstellen und kommentieren. Es können Nutzer auch andere Nutzer folgen und deren Posts sehen.
 
-Es ist noch nicht fertig. Es gibt bisher nur die Registrierung und das Einloggen, wo aber die Mail-Verifizierung noch nicht implementiert ist. Das Design ist auch nur temporär und wird noch geändert sobald die Funktionalität fertig ist.
+Es ist noch nicht sehr früh in Entwicklung. Es gibt bisher nur die Registrierung und das Einloggen.
+Das Design ist auch nur temporär und wird noch geändert sobald die Funktionalität fertig ist.
 
 ## Installation
 - Installiere Docker
@@ -19,7 +20,7 @@ Es ist noch nicht fertig. Es gibt bisher nur die Registrierung und das Einloggen
 
 ## Funktionalitäten
 - [x] Registrierung
-- [ ] E-Mail-Verifizierung
+- [ ] E-Mail-Verifizierung (?)
 - [x] Einloggen
 - [ ] Einstellungen
   - [ ] Passwort ändern
