@@ -12,6 +12,7 @@ class UserController
     $user = new User();
     $user->setFirstname($data['firstname']);
     $user->setLastname($data['lastname']);
+    $user->setUsername($data['username']);
     $user->setEmail($data['email']);
     $user->setPassword(password_hash($data['password'], PASSWORD_DEFAULT));
     $user->setBirthdate(new DateTime($data['birthdate']));

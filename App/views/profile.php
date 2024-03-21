@@ -1,7 +1,7 @@
 <?php 
   namespace App\views;
   use App\Models\User;
-  $user = User::find($_GET['id']);
+  $user = User::findWithUsername($_GET['u']);
 ?>
 <div class="profile-header">
   <div>

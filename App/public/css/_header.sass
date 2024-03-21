@@ -1,8 +1,13 @@
 $header_height: 5rem
 $header_height_mobile: 3rem
-$header_padding: 20px
-$header_padding_mobile: 10px
+$header_padding: 1.25rem
+$header_padding_mobile: 0.625rem
 header
+  position: fixed
+  top: 0
+  left: 0
+  width:  calc(100% - $header_padding * 2)
+  z-index: 100
   background-color: #000
   padding: 20px
   color: #fff
@@ -15,6 +20,40 @@ header
     font-size: 0.6em
     padding: $header_padding_mobile
     height: $header_height_mobile
+    width: calc( 100% - $header_padding_mobile * 2 )
+  form
+    display: flex
+    align-items: center
+    gap: .5rem
+    $height: 2rem
+    input[type="search"]
+      padding: 10px
+      border-radius: 5px
+      border: none
+      width: 300px
+      height: $height
+      border: 2px solid transparent
+      font-size: 1rem
+      background-color: darken($background, 70%)
+      color: lighten($color, 80%)
+      &:focus
+        outline: none
+        border-color: $accent
+    button
+      height: $height
+      background-color: $accent
+      color: #fff
+      border: none
+      padding: 8px 15px
+      border-radius: 5px
+      &:hover
+        background-color: darken($accent, 10%)
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+        transform: scale(1.1)
+        text-decoration: none
+      &:focus
+        outline: none
+        border-color: $accent
   >div
     display: flex
     align-items: center
@@ -41,62 +80,22 @@ header
           &:hover
             color: #666
 
-$size_profile: 70px
 .profile-img
+  $size_profile: 70px
   border-radius: 50%
   width: $size_profile
   height: $size_profile
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
   transition: all 0.3s ease
-  position: relative
+  position: relativ
   z-index: 150
   &:hover
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2)
+    cursor: pointer
   @media (max-width: 768px)
     width: 40px
     height: 40px
 
-#profile-menu
-  animation: fadeIn .3s ease
-  overflow: hidden
-  position: absolute
-  top: 20px - 10px
-  right:20px - 10px
-  width: 200px
-  background-color: darken($accent, 10%)
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
-  border-radius: 10px 30px 10px 10px
-  padding-bottom: 10px
-  z-index: 100
-  h3
-    font-size: 1.5em
-    margin: 0
-    padding: 0
-    margin-right: $size_profile+20px
-    margin-block: 10px
-    color: #fff
-  a
-    display: block
-    font-size: 1.2em
-    color: #eee
-    text-decoration: none
-    &:hover
-      color: #aaa
-      text-decoration: underline
-  &.active
-    display: block
-    transition: all 0.3s ease
-    a
-      transition: all 0.3s ease
-      &:hover
-        color: #f00
-        text-decoration: underline
-
-@keyframes fadeIn
-  from
-    opacity: 0
-  to
-    opacity: 1
 
 
 

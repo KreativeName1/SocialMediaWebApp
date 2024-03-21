@@ -22,6 +22,7 @@ class User extends Model
   private int $id;
   private string $firstname;
   private string $lastname;
+  private string $username;
   private DateTime $birthdate;
   private Gender $gender;
   private string $email;
@@ -44,6 +45,12 @@ class User extends Model
   }
   public function getLastname(): string {
     return $this->lastname;
+  }
+  public function setUsername(string $username): void {
+    $this->username = $username;
+  }
+  public function getUsername(): string {
+    return "@".$this->username;
   }
   public function setBirthdate(DateTime $birthdate): void {
     $this->birthdate = $birthdate;
@@ -94,6 +101,7 @@ class User extends Model
     $data = [
       'firstname' => $this->firstname,
       'lastname' => $this->lastname,
+      'username' => $this->username,
       'birthday' => $this->birthdate->format('Y-m-d'),
       'gender' =>  match($this->gender) {
         Gender::M => '1',
@@ -126,6 +134,7 @@ class User extends Model
     $this->id = $arr['id'];
     $this->firstname = $arr['firstname'];
     $this->lastname = $arr['lastname'];
+    $this->username = $arr['username'];
     $this->password = $arr['password'];
     $this->birthdate = DateTime::createFromFormat('Y-m-d', $arr['birthday']);
     $this->email = $arr['email'];
@@ -150,6 +159,15 @@ class User extends Model
     $stmt = $db->query("SELECT * FROM user WHERE email = :em ", [":em" => $email]);
     $arr = $stmt->fetch(PDO::FETCH_ASSOC);
     if (!$arr) throw new Exception("Email does not exist!");
+    $user = new User();
+    $user->FromArray($arr);
+    return $user;
+  }
+  public static function findWithUsername(string $username) {
+    $db = new Connection();
+    $username = str_replace('@', '', $username);
+    $stmt = $db->query("SELECT * FROM user WHERE username = :un ", [":un" => $username]);
+    $arr = $stmt->fetch(PDO::FETCH_ASSOC);
     $user = new User();
     $user->FromArray($arr);
     return $user;

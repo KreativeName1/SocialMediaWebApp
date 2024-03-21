@@ -18,6 +18,11 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2.5rem);
+  z-index: 100;
   background-color: #000;
   padding: 20px;
   color: #fff;
@@ -30,9 +35,48 @@ header {
 @media (max-width: 768px) {
   header {
     font-size: 0.6em;
-    padding: 10px;
+    padding: 0.625rem;
     height: 3rem;
+    width: calc(100% - 1.25rem);
   }
+}
+header form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+header form input[type=search] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  height: 2rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  background-color: #4d4d4d;
+  color: #cccccc;
+}
+header form input[type=search]:focus {
+  outline: none;
+  border-color: #db25e8;
+}
+header form button {
+  height: 2rem;
+  background-color: #db25e8;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+header form button:hover {
+  background-color: #b915c5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+  text-decoration: none;
+}
+header form button:focus {
+  outline: none;
+  border-color: #db25e8;
 }
 header > div {
   display: flex;
@@ -73,11 +117,12 @@ header nav ul li a:hover {
   height: 70px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  position: relative;
+  position: relativ;
   z-index: 150;
 }
 .profile-img:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .profile-img {
@@ -86,57 +131,6 @@ header nav ul li a:hover {
   }
 }
 
-#profile-menu {
-  animation: fadeIn 0.3s ease;
-  overflow: hidden;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 200px;
-  background-color: #b915c5;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px 30px 10px 10px;
-  padding-bottom: 10px;
-  z-index: 100;
-}
-#profile-menu h3 {
-  font-size: 1.5em;
-  margin: 0;
-  padding: 0;
-  margin-right: 90px;
-  margin-block: 10px;
-  color: #fff;
-}
-#profile-menu a {
-  display: block;
-  font-size: 1.2em;
-  color: #eee;
-  text-decoration: none;
-}
-#profile-menu a:hover {
-  color: #aaa;
-  text-decoration: underline;
-}
-#profile-menu.active {
-  display: block;
-  transition: all 0.3s ease;
-}
-#profile-menu.active a {
-  transition: all 0.3s ease;
-}
-#profile-menu.active a:hover {
-  color: #f00;
-  text-decoration: underline;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .signup-btn {
   background-color: #db25e8;
   color: #fff;
@@ -271,13 +265,14 @@ header nav ul li a:hover {
 main {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 7.5rem;
   background-color: #f2f2f2;
-  height: calc(100vh - 5rem - 40px);
+  height: calc(100vh - 5rem - 2.5rem);
   position: relative;
 }
 @media (max-width: 768px) {
   main {
-    height: calc(100vh - 3rem - 20px);
+    height: calc(100vh - 3rem - 1.25rem);
   }
 }
 
@@ -377,4 +372,73 @@ main {
 }
 .form .split select {
   width: calc(50% - 5px + 2px + 20px);
+}
+
+aside {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 200;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+@media (max-width: 1700px) {
+  aside {
+    position: fixed;
+    transition: width 0.3s ease;
+    width: 150px;
+    margin: 0;
+    top: 0;
+    right: -200px;
+    height: 100%;
+  }
+}
+@media (min-width: 1701px) {
+  aside {
+    position: fixed;
+    top: 7.5rem;
+    left: 0;
+  }
+}
+aside #aside-close {
+  display: none;
+}
+@media (max-width: 1700px) {
+  aside #aside-close {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    color: gray;
+  }
+  aside #aside-close:hover {
+    color: #000;
+  }
+}
+aside h1 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #000;
+}
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+aside ul li {
+  margin: 10px 0;
+}
+aside ul li a {
+  font-size: 1.2rem;
+  color: #db25e8;
+  text-decoration: none;
+}
+aside ul li a:hover {
+  color: #b915c5;
+  text-decoration: underline;
 }/*# sourceMappingURL=main.css.map */

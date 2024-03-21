@@ -3,7 +3,7 @@
   use App\controllers\UserController;
   use Exception;
 ?>
-<form class="form grid-register" action="?View=signin" method="post">
+<form class="form grid-register" action="?v=signin" method="post">
   <h1>Sign-In</h1>
   <input type="email" name="email" placeholder="Email" required>
   <input type="password" name="password" placeholder="Password" required>
