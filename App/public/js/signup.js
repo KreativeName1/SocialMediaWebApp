@@ -1,7 +1,3 @@
-// jquery
-// select the password (name="password")
-// check if safe
-
 $(document).ready(function() {
     $('#password').keyup(function() {
         $('#result').html(checkStrength($('#password').val()))
